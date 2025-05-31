@@ -1,0 +1,63 @@
+#include "pch.h"
+#include "iostream"
+#include "windows.h"
+#include "conio.h"
+#include <cstdlib>
+#include <ctime>
+using namespace System;
+using namespace std;
+
+
+/*
+--------------------------------------------------
+EJERCICIOS SEMANA 9
+--------------------------------------------------
+*/
+
+
+void generarnumeros(int numeros[]) {
+	srand(time(NULL));
+
+	for (int i = 0; i < 4; i++) {
+		numeros[i] = rand() % 40 + 1;
+	}
+}
+
+int hallar_mayor(int numeros[4]) {
+
+	int mayor = numeros[0];
+
+	for (int i = 1;i < 4;i++) {
+		if (numeros[i] > mayor) { mayor = numeros[i]; }
+	}
+	cout << endl << mayor;
+	return mayor;
+}
+
+int hallar_menor(int numeros[4]) {
+
+	int menor = numeros[0];
+
+	for (int i = 1;i < 4;i++) {
+		if (numeros[i] < menor) { menor = numeros[i]; }
+	}
+	cout << endl << menor;
+	return menor;
+}
+
+
+
+int main() {
+
+	int numeros[4];
+
+	generarnumeros(numeros);
+	for (int i = 0;i < 4;i++) {
+		cout << numeros[i] << " ";
+	}
+	hallar_mayor(numeros);
+	hallar_menor(numeros);
+
+	system("pause>0");
+	return 0;
+}
